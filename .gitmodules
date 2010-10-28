@@ -1,0 +1,3 @@
+[submodule "mysparql_tinymce"]
+	path = mysparql_tinymce
+	url = git://nymph.cs.man.ac.uk/mysparql_tinymce
