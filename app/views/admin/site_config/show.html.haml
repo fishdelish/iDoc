@@ -2,6 +2,7 @@
   != title "Site configuration"
   %ul
     %li= "Site title: #{@site_config.site_title}"
+    %li= "MySparql Server: #{@site_config.mysparql_server}"
     %li= "Use document author list: #{@site_config.use_document_author_list}"
   - if @site_config.use_document_author_list
     != link_to "Edit document author list", edit_admin_document_author_list_path
