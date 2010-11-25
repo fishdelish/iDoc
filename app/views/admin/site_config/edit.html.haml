@@ -1,6 +1,8 @@
 - form_for(@site_config, :url => admin_site_config_path) do |f|
   != f.label :site_title
   != f.text_field :site_title
+  != f.label :server_url
+  != f.text_field :server_url
   != f.label :mysparql_server
   != f.text_field :mysparql_server
   != f.label :use_document_author_list

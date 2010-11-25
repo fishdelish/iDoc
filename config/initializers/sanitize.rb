@@ -36,11 +36,8 @@ Sanitize::Config::RELAXED[:transformers] << lambda do |env|
   {:node => node, :attr_whitelist => ["id"]}
 end
 
-Sanitive::Config::RELAXED[:transformers] << lambda do |env|
-  node = env[:node]
-  node_name = node.name
-  return nil unless node['class'] =~ /mysparql/
-end
+Sanitize::Config::RELAXED[:attributes]["a"] << "class"
+Sanitize::Config::RELAXED[:attributes]["a"] << "data-formatter"
 
 class String
   def sanitize()

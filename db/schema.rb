@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101124153809) do
+ActiveRecord::Schema.define(:version => 20101125120941) do
 
   create_table "comments", :force => true do |t|
     t.text     "body",                  :null => false
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20101124153809) do
     t.datetime "updated_at"
     t.boolean  "use_document_author_list", :default => false
     t.string   "mysparql_server"
+    t.string   "server_url"
   end
 
   create_table "slugs", :force => true do |t|
