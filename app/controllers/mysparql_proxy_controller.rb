@@ -25,4 +25,9 @@ class MysparqlProxyController < ApplicationController
     r = Net::HTTP.post_form(URI.parse(@site_config.mysparql_server + "v1/queries/"+params[:query_id]+"/run"), {"query" => params[:query]})
     render :text => r.body, :status => r.code
   end
+
+  def preview
+    r = Net::HTTP.post_form(URI.parse(@site_config.mysparql_server + "v1/queries/preview/"), { "query" => params[:query], "source" => params['data-source']})
+    render :text => r.body, :status => r.code
+  end
 end
