@@ -11,4 +11,5 @@
 != init_tinymce_hammer_if_required
 != javascript_include_tag 'application.js'
 %script{:type => "text/javascript"}= "mysparql_path='#{@site_config.server_url}/mysparql'"
+%script{:type => "text/javascript"}!= "mysparql_loading='#{image_tag("progress.gif")}'"
 != javascript_include_tag @site_config.mysparql_server + "javascripts/MySparql.js"
