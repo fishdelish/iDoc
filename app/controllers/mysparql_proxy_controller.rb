@@ -9,11 +9,11 @@ class MysparqlProxyController < ApplicationController
 
   def show
     if params.has_key? :tutorial
-      uri = URI.parse(@site_config.mysparql_server + "v1/queries/"+params[:id]+"/data")
+      uri = URI.parse(@site_config.mysparql_server + "v1/queries/#{params[:id]}/data")
     else
-      uri = URI.parse(@site_config.mysparql_server + "v1/queries/"+params[:id])
+      
+      uri = URI.parse(@site_config.mysparql_server + "v1/queries/#{params[:id]}")
     end
-
     req = Net::HTTP::Get.new(uri.path)
     res = Net::HTTP.start(uri.host, uri.port) do |http|
       http.request(req)
