@@ -23,6 +23,7 @@ ActionController::Routing::Routes.draw do |map|
   map.connect '/mysparql/queries', :controller => :mysparql_proxy, :action => :create
   map.connect '/mysparql/queries/run', :controller => :mysparql_proxy, :action => :run
   map.connect '/mysparql/queries/:id', :controller => :mysparql_proxy, :action => :show
+  map.connect '/mysparql/queries/:query_id/param_query', :controller => :mysparql_proxy, :action => :param_query
   map.connect '/mysparql/preview', :controller => :mysparql_proxy, :action => :preview
   map.root :controller => :documentation_pages, :action => :index
 end
