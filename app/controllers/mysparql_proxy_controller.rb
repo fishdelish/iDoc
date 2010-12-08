@@ -32,7 +32,12 @@ class MysparqlProxyController < ApplicationController
   end
 
   def param_query
-    r = Net::HTTP.post_form(URI.parse(@site_config.mysparql_server + "v1/queries/" + params[:query_id] + "/param_query"), params)
+    if params.has_key? :tutorial
+      uri = URI.parse(@site_config.mysparql_server + "v1/queries/" + params[:query_id] + "/param_data")
+    else
+      uri = URI.parse(@site_config.mysparql_server + "v1/queries/" + params[:query_id] + "/param_query")
+    end
+    r = Net::HTTP.post_form(uri, params)
     render :text => r.body, :status => r.code
   end
 end
