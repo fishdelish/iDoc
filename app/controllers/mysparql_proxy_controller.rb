@@ -3,7 +3,7 @@ class MysparqlProxyController < ApplicationController
   skip_before_filter :verify_authenticity_token
 
   def create
-    r = Net::HTTP.post_form(URI.parse(@site_config.mysparql_server + "v1/queries/"), { "query[query]" => params['sparql-query'], "query[source]" => params['data-source']})
+    r = Net::HTTP.post_form(URI.parse(@site_config.mysparql_server + "v1/queries/"), { "query[query]" => params['sparql-query'], "query[source]" => params['data-source'], "query[xslt_path]" => params['xslt-url']})
     render :text => r.body, :status => r.code
   end
 
