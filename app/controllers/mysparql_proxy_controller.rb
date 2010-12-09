@@ -5,8 +5,9 @@ class MysparqlProxyController < ApplicationController
   def proxy
     uri = URI.parse(@site_config.mysparql_server + "v1/" + params[:path].join("/"))
     if request.get?
-      req = Net::HTTP::Get.new(uri.path)
-      req.query_string = request.query_string
+      path = uri.path
+      path += "?#{request.query_string}" unless request.query_string.blank?
+      req = Net::HTTP::Get.new(path)
     else 
       if request.post? 
         req = Net::HTTP::Post.new(uri.path)
