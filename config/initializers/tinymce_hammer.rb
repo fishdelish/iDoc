@@ -7,7 +7,7 @@ Tinymce::Hammer.init = [
   [:paste_remove_styles, true],
   [:paste_strip_class_attributes, true],
   [:media_strict, false],
-  [:extended_valid_elements, "a[rel|rev|charset|hreflang|tabindex|accesskey|type|name|href|target|title|class|onfocus|onblur|data-formatter]"],
+  [:extended_valid_elements, "a[rel|rev|charset|hreflang|tabindex|accesskey|type|name|href|target|title|class|onfocus|onblur|data-formatter],div[data-formatter|data-mysparql-id|data-xslt-type|class|data-parameterised|data-tutorial]"],
   [:theme, 'advanced'],
   [:theme_advanced_toolbar_align, 'left'],
   [:theme_advanced_blockformats, 'h2,h3,p'],

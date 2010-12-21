@@ -38,7 +38,8 @@ end
 
 Sanitize::Config::RELAXED[:attributes]["a"] << "class"
 Sanitize::Config::RELAXED[:attributes]["a"] << "data-formatter"
-
+Sanitize::Config::RELAXED[:elements] << "div"
+Sanitize::Config::RELAXED[:attributes]["div"] = ["data-formatter", "data-mysparql-id", "data-xslt-type", "data-parameterised", "class", "data-tutorial"]
 class String
   def sanitize()
     Sanitize.clean(self, Sanitize::Config::RELAXED)
