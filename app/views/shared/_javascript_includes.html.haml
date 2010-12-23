@@ -9,7 +9,8 @@
 != javascript_include_tag 'jquery.effects.core'
 != javascript_include_tag 'jquery.effects.blind'
 %script{:type => "text/javascript", :src => 'https://www.google.com/jsapi'}
-%script{:type => "text/javascript"} google.load('visualization', '1', {'packages':['table']});
+%script{:type => "text/javascript", :src => 'http://magic-table.googlecode.com/svn/trunk/magic-table/javascript/magic_table.js'}
+%script{:type => "text/javascript"} google.load('visualization', '1', {'packages':['table','map','corechart','treemap','intensitymap','geomap','gauge']});
 != init_tinymce_hammer_if_required
 != javascript_include_tag 'application.js'
 %script{:type => "text/javascript"}= "mysparql_path='#{@site_config.server_url}/mysparql'"
