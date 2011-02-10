@@ -16,7 +16,10 @@ class MysparqlProxyController < ApplicationController
       end
       req.body = request.body.read
     end
-    res = Net::HTTP.start(uri.host, uri.port) {|h| h.request(req)}
+    res = Net::HTTP.start(uri.host, uri.port) do |h| 
+      h.read_timeout = 3600
+      h.request(req)
+    end
     send_data res.body, :status => res.code, :type => res.content_type      
   end
 end
